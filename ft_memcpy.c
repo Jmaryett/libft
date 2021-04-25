@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 20:01:38 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/04/25 19:42:00 by chudapak         ###   ########.fr       */
+/*   Created: 2021/04/25 19:46:25 by chudapak          #+#    #+#             */
+/*   Updated: 2021/04/25 20:44:27 by chudapak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "libft.h"
 
-#define LIBFT_H
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
-size_t	ft_strlen(const char *str);
-void	ft_bzero(void *s, size_t n);
-
-#endif
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	char *d = (char*)dst; char *s = (char*)src; int i = 0;
+	if (n == 0)
+		return (d);
+	if (!dst && !src)
+		return (NULL);
+	while (n > 0 && s[i])
+	{
+		d[i]= s[i];
+		i++;
+		n--;
+	}
+	d[i] = '\0';
+	return (d);
+}
