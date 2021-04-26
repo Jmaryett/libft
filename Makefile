@@ -12,7 +12,7 @@
 
 NAME = libft.a
 	
-HEADER	= ../libft.h
+HEADER	= libft.h
 
 SRCS	= ft_strlen.c \
 		 ft_strlcpy.c \
@@ -31,9 +31,9 @@ SRCS	= ft_strlen.c \
 		 ft_memcpy.c \
 		 ft_memccpy.c \
 		 ft_memmove.c \
+		 ft_memchr.c \
+		 ft_memcmp.c \
 		 #ft_strrchr.c \
-		 #ft_memchr.c \
-		 #ft_memcmp.c \
 		 #ft_strnstr.c \
 		 #ft_strncmp.c \
 		 #ft_atoi.c \
@@ -53,7 +53,7 @@ CFLAGS 	= -Wall -Wextra -Werror
 
 all: ${NAME}
 	
-${NAME}:	${OBJS}
+${NAME}:	${OBJS} ${HEADER}
 			${AR} ${NAME} ${OBJS}
 
 clean:
