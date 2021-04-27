@@ -13,9 +13,9 @@ int ft_memcmp(const void *arr1, const void *arr2, size_t n)
         if (str1[i] != str2[i])
         {
             if (str1[i] > str2[i])
-                return (1);
+                return (str1[i] - str2[i]);
             if (str2[i] > str1[i])
-                return (-1);
+                return (str1[i] - str2[i]);
         }
         i++;
     }

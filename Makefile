@@ -6,7 +6,7 @@
 #    By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/19 20:03:11 by jmaryett          #+#    #+#              #
-#    Updated: 2021/04/25 21:20:50 by chudapak         ###   ########.fr        #
+#    Updated: 2021/04/27 19:11:23 by chudapak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,13 @@ SRCS	= ft_strlen.c \
 		 ft_memmove.c \
 		 ft_memchr.c \
 		 ft_memcmp.c \
-		 #ft_strrchr.c \
-		 #ft_strnstr.c \
-		 #ft_strncmp.c \
-		 #ft_atoi.c \
-		 #ft_strdup.c \
+		 ft_strrchr.c \
+		 ft_strncmp.c \
+		 ft_strnstr.c \
+		 ft_atoi.c \
+		 ft_strdup.c \
+		 ft_substr.c \
+		 
 
 
 OBJS	= ${SRCS:.c=.o}
