@@ -6,7 +6,7 @@
 #    By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/19 20:03:11 by jmaryett          #+#    #+#              #
-#    Updated: 2021/04/27 19:11:23 by chudapak         ###   ########.fr        #
+#    Updated: 2021/04/28 20:40:28 by chudapak         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ SRCS	= ft_strlen.c \
 		 ft_atoi.c \
 		 ft_strdup.c \
 		 ft_substr.c \
+		 ft_strjoin.c \
+		 ft_strtrim.c \
 		 
 
 
