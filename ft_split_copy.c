@@ -54,8 +54,10 @@ static char **mem_for_arrays(char const *s, char c, char **t, size_t j, size_t i
 		if (l != 0)
 		{
         	if (!(t[k] = malloc(sizeof(char) * (l + 1))))
-				free_array(t);
-        	l = 0;
+            {
+				t = free_array(t);
+                return (t);
+            }
 	        k++;
 		}
     }
