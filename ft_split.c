@@ -91,6 +91,8 @@ char **ft_split(char const *s, char c)
     size_t j; 
     size_t l;
 
+	if (!s)
+		return (NULL);
     l = 0;
     j = count_first_array(s, c);
     i = -1;
@@ -101,13 +103,3 @@ char **ft_split(char const *s, char c)
     t = filling_strings(s, c, t, j, l);
     return (t);
 }
-
-/* int main()
-{
-	char *string = "      split       this for   me  !       ";
-	char 	**gg;
-
-	gg = ft_split(string, ' ');
-    printf ("%s", *gg);
-	return (0);
-} */
