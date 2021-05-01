@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
+#include <unistd.h>
 size_t	ft_strlen(const char *str);
 void	ft_bzero(void *s, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
