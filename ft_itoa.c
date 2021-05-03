@@ -1,89 +1,42 @@
 #include "libft.h"
 
-char *reverse(char *str)
-{
-    int i;
-    int j;
-    char c;
-
-    i = 0;
-    j = ft_strlen(str) - 1;
-    while(i < j)
-    {
-        c = str[i];
-        str[i] = str[j];
-        str[j] = c;
-        i++;
-        j--;
-    }
-    return (str);
-}
-
-int count(int n)
+static int count(int n)
 {
     int len;
 
-    len = 0;
-    while(n > 0)
+    len = 1;
+    if (n < 0)
     {
-        len++;
-        n = n / 10;
+        while(n != 0)
+        {
+            n = n / 10;
+            len++;
+        }
     }
+    else
+		while (n > 9)
+		{
+			n = n / 10;
+			len++;
+		}
     return (len);
 }
 
-int	check_n(int n)
+static char *fill_array(char *str, int n, int len)
 {
-	if (n == -0)
-		n = -n;
-	if (n == -2147483648)
-		n = 2147483648;
-	if (n < 0)
-		n = -n;
-	return (n);
-}
-
-char *fill_array(char *str, int n, int sign)
-{
-	int i;
-
-	i = 0;
 	if (n == 0)
+    	str[0] = '0';
+    else if (n - 1 == 2147483647)
 	{
-    	str[i] = '0';
-    	str[++i] = '\0';
-		str = reverse(str);
-		return (str);
+		str[1] = '2';
+		n = 147483648;
 	}
-    while(n > 0)
-    {
-        str[i++] = n % 10 + '0';
-        n = n / 10;
-    }
-	if (sign == -0)
-		sign = -sign;
-    if (sign < 0)
-        str[i++] = '-';
-    str[i] = '\0';
-	str = reverse(str);
-	return (str);
-}
-
-char *memory_alloc(int len, int n, int sign)
-{
-	char *str;
-
-	if (sign <= 0)
+	while (n != 0)
 	{
-    	if (!(str = (char*)malloc(sizeof(char) * (len + 2))))
-       		return (NULL);
+		str[len] = n % 10 + '0';
+		n /= 10;
+		len--;
 	}
-	else
-	{
-		if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
-       		return (NULL);
-	}
-	str = fill_array(str, n, sign);
 	return (str);
 }
 
@@ -93,9 +46,22 @@ char *ft_itoa(int n)
     int sign;
     int len;
 
-    sign = n;
-	n = check_n(n);
+    sign = 1;
+    if (n < 0)
+        sign = -1;
     len = count(n);
-	str = memory_alloc(len, n, sign);
+    if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+       		return (NULL);
+    if (n == -2147483647 - 1)
+	{
+		ft_strlcpy(str, "-2147483648", sizeof("-2147483648"));
+		return (str);
+	}
+    str[len] = '\0';
+    if (sign == -1)
+        str[0] = '-';
+    n *= sign;
+	len--;
+	str = fill_array(str, n, len);
     return (str);
 }
