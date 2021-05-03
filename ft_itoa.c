@@ -32,28 +32,70 @@ int count(int n)
     return (len);
 }
 
-char *ft_itoa(int n)
+int	check_n(int n)
 {
-    char *str;
-    int i;
-    int sign;
-    int len;
+	if (n == -0)
+		n = -n;
+	if (n == -2147483648)
+		n = 2147483648;
+	if (n < 0)
+		n = -n;
+	return (n);
+}
 
-    i = 0;
-    sign = n;
-    if (n < 0)
-        n = -n;
-    len = count(n);
-    if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
-        return (NULL);
+char *fill_array(char *str, int n, int sign)
+{
+	int i;
+
+	i = 0;
+	if (n == 0)
+	{
+    	str[i] = '0';
+    	str[++i] = '\0';
+		str = reverse(str);
+		return (str);
+	}
     while(n > 0)
     {
         str[i++] = n % 10 + '0';
         n = n / 10;
     }
+	if (sign == -0)
+		sign = -sign;
     if (sign < 0)
         str[i++] = '-';
     str[i] = '\0';
-    str = reverse(str);
+	str = reverse(str);
+	return (str);
+}
+
+char *memory_alloc(int len, int n, int sign)
+{
+	char *str;
+
+	if (sign <= 0)
+	{
+    	if (!(str = (char*)malloc(sizeof(char) * (len + 2))))
+       		return (NULL);
+	}
+	else
+	{
+		if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+       		return (NULL);
+	}
+	str = fill_array(str, n, sign);
+	return (str);
+}
+
+char *ft_itoa(int n)
+{
+    char *str;
+    int sign;
+    int len;
+
+    sign = n;
+	n = check_n(n);
+    len = count(n);
+	str = memory_alloc(len, n, sign);
     return (str);
 }
