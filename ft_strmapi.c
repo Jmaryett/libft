@@ -2,21 +2,18 @@
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    int i = 0;
+    unsigned int i = 0;
     char *str;
-    char a;
+    size_t len;
 
+    len = ft_strlen(s);
+    if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+        return (NULL);
     while (s[i])
     {
-        if(!f(i, &s[i]))
-            return (NULL);
-        else
-        {
-            a = f(i, &s[i]);
-            if (!(str = (char*)malloc(sizeof(char) * (a + 1))))
-                return (NULL);
-            return (str);
-        }
+        str[i] = f(i, (char)s[i]);
         i++;
     }
+    str[i] = '\0';
+    return(str);
 }
