@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chudapak <chudapak@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmaryett <jmaryett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 20:01:38 by jmaryett          #+#    #+#             */
-/*   Updated: 2021/04/25 19:42:00 by chudapak         ###   ########.fr       */
+/*   Updated: 2021/05/05 15:52:31 by jmaryett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void    *ft_memcpy(void *dst, const void *src, size_t n);
 size_t  ft_strlcpy(char *dst, const char *src, size_t len);
 void    ft_putchar_fd(char c, int fd);
 void    ft_putnbr_fd(int n, int fd);
-int     ft_atoi(char *str);
+int     ft_atoi(const char *str);
 void    *ft_calloc(size_t count, size_t size);
 int     ft_isalnum(int c);
 int     ft_isalpha(int c);

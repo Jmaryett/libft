@@ -4,7 +4,7 @@ char    *ft_strnstr (const char *haystak, const char *needle, size_t len)
 {
     char *s1 = (char*)haystak; char *s2 = (char*)needle; size_t i = 0; size_t j = 0;
 
-    if (*needle == '\0' || !needle || !len)
+    if (*needle == '\0')
         return (s1);
     while (s1[i] && i < len)
     {
