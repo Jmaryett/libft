@@ -3,8 +3,13 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *d = (char*)dst; char *s = (char*)src; size_t i = 0;
-	
+	char *d;
+	char *s;
+	size_t i;
+
+	i = 0;
+	d = (char*)dst;
+	s = (char*)src;
 	if (!dst && !src)
 		return (NULL);
 	if (d > s)
@@ -20,5 +25,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			i++;
 		}
 	}
-	return (d);	
+	return (d);
 }

@@ -2,41 +2,49 @@
 
 char **ft_split(char const *s, char c)
 {
-    size_t i = 0; char **t; size_t j = 0; size_t k = 0; size_t l = 0;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	size_t	l;
+	char	**t;
 
-    while (s[i])
-    {
-        if (s[i] != c)
-        {  
-            j++;
-            while (s[i] != c && s[i])
-                i++;
-        }
-        i++;
-    }
-    i = -1;
-    t = malloc(sizeof(char*) * (j + 1));
-    t[j] = NULL; 
-
-    while (k < j && s[++i])
-    {
-        while (s[i] != c && s[i])
+	i = 0;
+	j = 0;
+	k = 0;
+	l = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
 		{
-            l++;
+			j++;
+			while (s[i] != c && s[i])
+				i++;
+		}
+		i++;
+	}
+	i = -1;
+	t = malloc(sizeof(char*) * (j + 1));
+	t[j] = NULL; 
+
+	while (k < j && s[++i])
+	{
+		while (s[i] != c && s[i])
+		{
+			l++;
 			i++;
 		}
 		if (l != 0)
 		{
-        	if (t[k] = malloc(sizeof(char) * (l + 1)))
+			if (t[k] = malloc(sizeof(char) * (l + 1)))
 				free_array(t);
-        	l = 0;
-	        k++;
+			l = 0;
+			k++;
 		}
-    }
-    k = 0;
-    i = 0;
-    while(k < j && s[i])
-    {
+	}
+	k = 0;
+	i = 0;
+	while(k < j && s[i])
+	{
 		if (s[i] != c)
 		{
         	while (s[i] != c && s[i])
