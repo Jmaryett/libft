@@ -1,9 +1,10 @@
 #include "libft.h"
 
-static
-	int	ft_set(char c, char const *set)
+static	int	ft_set(char c, char const *set)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (set[i])
 	{
 		if (set[i] == c)
@@ -15,7 +16,7 @@ static
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*copy;
+	char		*copy;
 	size_t		i;
 	size_t		j;
 	size_t		k;
@@ -25,11 +26,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = 0;
 	k = ft_strlen(s1);
-	while (s1[i]  && ft_set(s1[i], set))
+	while (s1[i] && ft_set(s1[i], set))
 		i++;
 	while (k > i && ft_set(s1[k - 1], set))
 		k--;
-	copy = (char*)malloc(sizeof(char) * (k - i + 1));
+	copy = (char *)malloc(sizeof(char) * (k - i + 1));
 	if (!copy)
 		return (NULL);
 	while (i < k)

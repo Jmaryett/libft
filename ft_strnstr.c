@@ -2,8 +2,15 @@
 
 char	*ft_strnstr (const char *haystak, const char *needle, size_t len)
 {
-	char *s1 = (char*)haystak; char *s2 = (char*)needle; size_t i = 0; size_t j = 0;
+	char	*s1;
+	char	*s2;
+	size_t	i;
+	size_t	j;
 
+	i = 0;
+	j = 0;
+	s1 = (char *)haystak;
+	s2 = (char *)needle;
 	if (*needle == '\0')
 		return (s1);
 	while (s1[i] && i < len)

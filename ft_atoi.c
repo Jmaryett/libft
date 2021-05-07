@@ -1,8 +1,8 @@
 #include "libft.h"
 
-static int	attoi(char *str)
+static	unsigned long	attoi(char *str)
 {
-	int	n;
+	unsigned long	n;
 
 	n = 0;
 	while (*str >= '0' && *str <= '9')
@@ -15,11 +15,11 @@ static int	attoi(char *str)
 
 int	ft_atoi(const char *str)
 {
-	int	count;
-	int	n;
+	int				count;
+	unsigned long	n;
 
-	count = 1;
 	n = 0;
+	count = 1;
 	while (*str == ' ' || (*str >= 7 && *str <= 13))
 		str++;
 	if (*str == '-' || *str == '+')
@@ -31,9 +31,9 @@ int	ft_atoi(const char *str)
 	if (*str < '0' || *str > '9')
 		return (0);
 	n = attoi((char *)str);
-	if (n > 2147483647 && count == 1)
+	if (n > 9223372036854775807 && count == 1)
 		return (-1);
-	if (n > 2147483647 && count == -1)
+	if (n > 9223372036854775807 && count == -1)
 		return (0);
 	return (count * n);
 }

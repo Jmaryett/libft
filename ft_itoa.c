@@ -1,7 +1,6 @@
 #include "libft.h"
 
-static
-	int	count(int n)
+static	int	count(int n)
 {
 	int	len;
 
@@ -9,9 +8,9 @@ static
 	if (n < 0)
 	{
 		while (n != 0)
-	{
-		n = n / 10;
-		len++;
+		{
+			n = n / 10;
+			len++;
 		}
 	}
 	else
@@ -25,8 +24,7 @@ static
 	return (len);
 }
 
-static
-	char	*fill_array(char *str, int n, int len)
+static	char	*fill_array(char *str, int n, int len)
 {
 	if (n == 0)
 		str[0] = '0';
@@ -54,7 +52,8 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		sign = -1;
 	len = count(n);
-	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
 	if (n == -2147483647 - 1)
 	{
