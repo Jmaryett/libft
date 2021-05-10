@@ -4,17 +4,23 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	void	*tmp;
 	t_list	*new;
+	t_list	*elem;
 
-	if(!lst)
+	if(!lst || !f)
 		return (NULL);
+	elem = NULL;
 	while(lst)
 	{
 		tmp = lst->content;
-		new = (t_list*)malloc(sizeof(t_list));
-		if (!new)
-			del(new);
-		new->content = f(tmp);
+		elem = ft_lstnew((*f)(tmp));
+		if (!elem)
+		{
+			del(elem);
+			free(elem);
+			return (NULL);
+		}
+		ft_lstadd_back(new, elem);
 		lst = lst->next;
 	}
-	return (NULL);
+	return (new);
 }
