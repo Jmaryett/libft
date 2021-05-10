@@ -2,11 +2,11 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*tmp;
+	void	*tmp;
 
 	if (!lst)
 		return ;
-	while(lst->next)
+	while(lst)
 	{
 		tmp = lst->content;
 		f(tmp);
