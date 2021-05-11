@@ -9,13 +9,11 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
-
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);

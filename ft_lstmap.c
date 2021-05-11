@@ -6,10 +6,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 	t_list	*elem;
 
-	if(!lst || !f)
+	if (!lst || !f)
 		return (NULL);
 	new = NULL;
-	while(lst)
+	while (lst)
 	{
 		tmp = lst->content;
 		elem = ft_lstnew((*f)(tmp));

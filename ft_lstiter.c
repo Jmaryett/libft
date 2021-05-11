@@ -6,10 +6,10 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 
 	if (!lst)
 		return ;
-	while(lst)
+	while (lst)
 	{
 		tmp = lst->content;
 		f(tmp);
-		lst = lst->next; 
+		lst = lst->next;
 	}
 }
