@@ -6,8 +6,10 @@ char	*ft_strdup(const char *str)
 	char			*copy;
 
 	i = 0;
+	if (!str)
+		return (NULL);
 	copy = (char *)malloc(sizeof(*copy) * ft_strlen(str) + 1);
-	if (!copy || !str)
+	if (!copy)
 		return (NULL);
 	while (str[i])
 	{

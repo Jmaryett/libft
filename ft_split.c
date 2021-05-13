@@ -8,6 +8,7 @@ static	char	**free_array(char **t)
 		t++;
 	}
 	*t = NULL;
+	free(t);
 	return (t);
 }
 
