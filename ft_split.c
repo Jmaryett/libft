@@ -92,10 +92,8 @@ static	int	count_first_array(const char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	size_t	j;
-	size_t	l;
 	char	**t;
 
-	l = 0;
 	if (!s)
 		return (NULL);
 	j = count_first_array(s, c);
