@@ -14,7 +14,7 @@ static	int	ft_set(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char *s1, char *set)
 {
 	char		*copy;
 	size_t		i;
