@@ -2,13 +2,16 @@
 
 static	char	**free_array(char **t)
 {
-	while (*t)
+	int	i;
+
+	i = 0;
+	while (t[i])
 	{
-		free (*t);
-		t++;
+		free (t[i]);
+		i++;
 	}
-	*t = NULL;
-	free (t);
+	free(t);
+	t = NULL;
 	return (t);
 }
 
