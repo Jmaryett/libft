@@ -4,9 +4,9 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	if (fd == -1)
 		return ;
-	else if (n == -2147483647 -1)
+	else if (n == -2147483647 - 1)
 	{
-		write(fd, "-2147483648", 11);
+		write (fd, "-2147483648", 11);
 		return ;
 	}
 	else if (n == 2147483647)

@@ -8,7 +8,7 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	i = -1;
 	if (!s1)
-		return(ft_strdup(s2));
+		return (ft_strdup(s2));
 	if (!s2)
 		return (NULL);
 	res = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));

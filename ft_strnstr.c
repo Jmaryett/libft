@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char	*ft_strnstr (const char *haystak, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystak, const char *needle, size_t len)
 {
 	char	*s1;
 	char	*s2;
