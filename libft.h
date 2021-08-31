@@ -45,7 +45,7 @@ char	*ft_strchr(const char *str, int ch);
 char	*ft_strdup(const char *str);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	*ft_strnstr (const char *haystak, const char *needle, size_t len);
+char	*ft_strnstr(const char *haystak, const char *needle, size_t len);
 char	*ft_strrchr(const char *str, int ch);
 char	*ft_strtrim(char *s1, char *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
